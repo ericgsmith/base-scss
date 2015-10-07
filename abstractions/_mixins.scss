@@ -2,8 +2,10 @@
 ///
 /// @param {string} $name
 ///   The name of the z-index level in the z-index map.
-/// @output z-index rule.
+/// @output
+///   Z-index property and value for the given name.
 /// @access public
+/// @group Layout
 @mixin z-index($name) {
   @if map-has-key($z-index-map, $name) {
     // Unfortunately Drupal sets a z-index of 999 on contextual links, so rather

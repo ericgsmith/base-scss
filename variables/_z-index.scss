@@ -1,0 +1,14 @@
+////
+/// Z-index variables
+/// @group LAYOUT
+////
+
+/// Z-index map.
+///  Stores the z-index hierarchy of the site.
+///
+/// @access private
+/// @type List
+$z-index-map : (
+  base : 1,
+  contextual-links : 2
+);

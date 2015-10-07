@@ -1,7 +1,7 @@
 #Abstractions
 
 Contains only functions and mixins that do not compile to CSS and are used by 
-rest of the sass partials.
+rest of the Sass partials.
 
 Abstractions should all be documents using [SassDoc](http://sassdoc.com/).
 

@@ -13,8 +13,9 @@
     // links so that even if the z-index numbers are ridiculous in CSS, they are
     // sane and understandable in the SASS.
     $z-index-value : map-get($z-index-map, $name);
-    @if $z-index-value > map-get($z-index-map, 'contextual-links') {
-      $z-index-value : $z-index-value + 998;
+    $contextual-link-position = map-get($z-index-map, 'contextual-links');
+    @if $z-index-value > $contextual-link-position {
+      $z-index-value : $z-index-value + (999 - $contextual-link-position);
     }
     z-index: $z-index-value;
   }

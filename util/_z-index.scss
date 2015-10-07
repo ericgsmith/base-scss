@@ -1,0 +1,48 @@
+////
+/// Z-index.
+/// @group Layout
+////
+
+// Z-index name constants.
+$Z_INDEX_VALUE_BASE : 'base';
+$Z_INDEX_VALUE_CONTEXTUAL_LINKS : 'contextual-links';
+$Z_INDEX_VALUE_MODAL : 'modal';
+
+/// Z-index map.
+///  Stores the z-index hierarchy of the site.
+///
+/// @access private
+/// @type List
+$z-index-map : (
+  $Z_INDEX_VALUE_BASE : 1,
+  $Z_INDEX_VALUE_CONTEXTUAL_LINKS : 2,
+  $Z_INDEX_VALUE_MODAL : 3
+);
+
+/// Mixin to get the z-index on an element.
+///
+/// @access public
+/// @param {string} $name
+///   The name of the z-index level in the z-index map.
+/// @example scss - Usage
+///   .foo {
+///     @include z-index($Z_INDEX_VALUE_MODAL);
+///   }
+/// @example css - CSS output
+///   .foo {
+///     z-index: 1000;
+///   }
+@mixin z-index($name) {
+  @if map-has-key($z-index-map, $name) {
+    // Unfortunately Drupal sets a z-index of 999 on contextual links, so rather
+    // than going with "magic numbers" we can add 998 to any value above the contextual
+    // links so that even if the z-index numbers are ridiculous in CSS, they are
+    // sane and understandable in the SASS.
+    $z-index-value : map-get($z-index-map, $name);
+    $contextual-link-position : map-get($z-index-map, $Z_INDEX_VALUE_CONTEXTUAL_LINKS);
+    @if $z-index-value >= $contextual-link-position {
+      $z-index-value : $z-index-value + (999 - $contextual-link-position);
+    }
+    z-index: $z-index-value;
+  }
+}

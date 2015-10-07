@@ -1,6 +1,6 @@
-#Variables
+#Util
 
-Contains only variables used within your other partials.
+Collection of variables and any generic mixins or functions.
 
 Using variables makes it much easier to ensure consistency throughout your 
 stylesheets for values such as colors and numeric values.
@@ -13,19 +13,21 @@ When creating variables, consider the following rules
 
 Sass variables are `$hyphen-separated` NOT `$camelCase` or `$underscore_separated`.
 
+Constants (not a real thing in Sass) can be represented as `$UPPERCASE_UNDERSCORE_SEPARATED`;
+
 Sass variables should be documented using [SassDoc](http://sassdoc.com/).
 
-##_breakpoints.scss
+###_breakpoints.scss
 
 Contains your breakpoint definitions.
 
 Breakpoints should not be named after devices but something more general.
 
-##_colours.scss
+###_colours.scss
 
 Contains your colour values or maps.
 
-##_fonts.scss
+###_fonts.scss
 
 Contains your font related variables. 
 
@@ -34,12 +36,12 @@ This can include such items as:
 - font weights
 - font families
 
-##_grid.scss
+###_grid.scss
 
 Contains any grid related variables. If using a system such as susy, place your
 susy variables here.
 
-##_spacings.scss
+###_spacings.scss
 
 Contains any spacing related variables.
 
@@ -48,6 +50,6 @@ This can include such items as:
 - high level layout separation margin
 - horizontal or vertical spacing values
 
-##_z-index.scss
+###_z-index.scss
 
-Contains a z-index map or values.
+Contains the z-index map and mixin.

@@ -25,10 +25,16 @@ $transition-default-delay: 0;
 ///   }
 /// @example css - CSS output
 ///   .foo {
-///     z-index: 1;
+///     transition-property: all
+///     transition-duration: 1s;
+///     transition-timing-function: ease;
+///     transition-delay: 0;
 ///   }
 ///   .bar {
-///     z-index: 1000;
+///     transition-property: all
+///     transition-duration: 0.5s;
+///     transition-timing-function: linear;
+///     transition-delay: 0;
 ///   }
 /// Use: @include transitions(leave empty for default or set options);
 @mixin transitions($property: $transition-default-property, $duration: $transition-default-duration, $function: $transition-default-function, $delay: $transition-default-delay) {

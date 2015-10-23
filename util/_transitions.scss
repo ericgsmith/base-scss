@@ -5,9 +5,17 @@
 
 // Transition default values.
 
+/// Transition property default value.
+/// @type String
 $transition-default-property: all;
+/// Transition duration default value in seconds.
+/// @type Number [unit]
 $transition-default-duration: 1s;
+/// Transition duration default value.
+/// @type String
 $transition-default-function: ease;
+/// Transition delay default value in seconds.
+/// @type Number [unit]
 $transition-default-delay: 0;
 
 /// Mixin for CSS transitions
